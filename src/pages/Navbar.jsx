@@ -32,10 +32,6 @@ export default function Navbar() {
                 href={link.path}
                 target={link.isRedirectLink ? "_blank" : null}
                 className={`transform hover:skew-x-12 transition-all duration-300 ease-in-out ${
-                  selectedIndex === index
-                    ? "underline underline-offset-2 font-extrabold"
-                    : ""
-                }  ${
                   link.isRedirectLink
                     ? "text-emerald-300 hover:text-emerald-600"
                     : "text-white hover:text-white/50"

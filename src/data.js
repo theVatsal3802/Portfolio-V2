@@ -117,10 +117,21 @@ export const data = {
     achievement: [
         { title: "Achieved AIR 313 (99.74 percentile) out of a total of 150,000 aspirants in GATE 2024.", },
         { title: "Shortlisted in the Top 100 finalists for the Google Solution Challenge, 2023. Worked on an LGBTQ + Social Media App in Flutter." },
-        { title: "Achieved 98.07 percentile out of a total of around 10,00,000 aspirants in JEE Mains 2020." },
+        { title: "Achieved 98.53 percentile out of a total of around 10,00,000 aspirants in JEE Mains 2020." },
     ],
 
     experience: [
+        {
+            name: "Texas Instruments",
+            position: "SDE Intern",
+            duration: "May 2025 - Jul 2025",
+            type: "Internship",
+            desc: [
+                " Developing a visualization software using Flutter & Dart to visualize the logs in an efficient manner which is expected to reduce the debugging time by 50 %.",
+                " Integrated custom solution into existing C code to dump the processor logs into JSON format, without affecting existing functionality to felicitate seamless integration into the visualization tool.",
+            ],
+            certificate: "",
+        },
         {
             name: "Xero Apps Pvt. Ltd.",
             position: "Software Developer Intern",
