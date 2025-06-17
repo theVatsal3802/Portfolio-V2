@@ -90,7 +90,7 @@ export const data = {
     education: [
         {
             college: "IIT Kharagpur",
-            score: "CGPA: 8.38 / 10",
+            score: "CGPA: 8.43 / 10",
             level: "M.Tech in CSE",
             duration: "Jul 2024 - Jun 2026",
         },
@@ -147,6 +147,15 @@ export const data = {
     ],
 
     projects: [
+        {
+            title: "BlinkDB: a fast, efficient, in-memory database",
+            desc: "BlinkDB is an in-memory key-value store inspired by Redis. It provides a REPL for interactive usage, a server that runs in different modes, and a client for connecting to the server. Additionally, automated benchmarking is supported using redis-benchmark.",
+            stack: "C++, Multithreading, Network Communications, RESP 2.0",
+            git: "https://github.com/theVatsal3802/BlinkDB",
+            link: "https://thevatsal3802.github.io/BlinkDB/",
+            type: "systems",
+            isDocumentation: true,
+        },
         {
             title: "RouteQ",
             desc: "A highly scalable, robust and fault-tolerant backend, similar to Uber, to manage a complete ride-hailing application in a production-ready environment.",
@@ -298,6 +307,10 @@ export const data = {
                 {
                     name: "Python",
                     link: "https://img.icons8.com/color/48/python--v1.png",
+                },
+                {
+                    name: "Go",
+                    link: "https://img.icons8.com/cute-clipart/48/go-logo.png",
                 },
             ],
         },

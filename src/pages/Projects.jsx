@@ -105,7 +105,9 @@ export default function Projects() {
                     <span className="mr-2">
                       <HiOutlineExternalLink size={30} />
                     </span>
-                    {" View Project"}
+                    {project.isDocumentation
+                      ? " View Documentation"
+                      : " View Project"}
                   </ElevatedButton>
                 </>
               )}
