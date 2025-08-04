@@ -130,7 +130,7 @@ export const data = {
                 " Developing a visualization software using Flutter & Dart to visualize the logs in an efficient manner which is expected to reduce the debugging time by 50 %.",
                 " Integrated custom solution into existing C code to dump the processor logs into JSON format, without affecting existing functionality to felicitate seamless integration into the visualization tool.",
             ],
-            certificate: "",
+            certificate: "https://drive.google.com/file/d/1CqK9NWlb-jrABmhlagls8vrapwBl4-_O/view?usp=sharing",
         },
         {
             name: "Xero Apps Pvt. Ltd.",
