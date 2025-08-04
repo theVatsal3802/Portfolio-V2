@@ -4,7 +4,7 @@ import trophy from "./assets/trophy.png";
 
 export const data = {
     // General Strings
-    year: "2024",
+    year: "2025",
     tagLine: "Enthusiastic Software developer. Creating innovative solutions and always looking to push boundaries in tech.",
     name: "Vatsal Adhiya",
     profilePic: profilepic,
