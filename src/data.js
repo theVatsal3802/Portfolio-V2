@@ -276,7 +276,7 @@ export const data = {
                 },
                 {
                     name: "ExpressJS",
-                    link: "https://img.icons8.com/color/48/express-js.png",
+                    link: "https://img.icons8.com/office/40/express-js.png",
                 },
             ],
         },

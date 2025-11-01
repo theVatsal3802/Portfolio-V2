@@ -1,29 +1,18 @@
-import AboutSectionRowOne from "../components/AboutSectionRowOne";
 import { data } from "../data";
 
 export default function About() {
   return (
-    <>
-      <section id="about" className="text-white p-8">
-        <h2 className="text-4xl md:text-7xl font-bold mb-8 text-center mx-auto">
-          About <span className="text-emerald-300">Me</span>
-        </h2>
-        <AboutSectionRowOne text={data.abstract.first.text}>
-          <div className="rounded-lg p-4 mb-4 border border-white/20 w-fit mx-auto">
-            <code className="text-emerald-300 text-xl">
-              const generalInformation = [
-              <br />
-              &nbsp;&nbsp;{`"${data.abstract.first.children.dob},"`}
-              <br />
-              &nbsp;&nbsp;{`"${data.abstract.first.children.location},"`}
-              <br />
-              &nbsp;&nbsp;{`"${data.abstract.first.children.education},"`}
-              <br />
-              ];
-            </code>
-          </div>
-        </AboutSectionRowOne>
-      </section>
-    </>
+    <section id="about" className="py-12 md:py-16 lg:py-24">
+      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-12 text-center text-text-primary dark:text-text-primary">
+        About <span className="text-accent">Me</span>
+      </h2>
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-bg-secondary dark:bg-bg-secondary border border-border-primary dark:border-border-primary rounded-lg p-6 md:p-8 lg:p-10">
+          <p className="text-base md:text-lg lg:text-xl text-text-secondary dark:text-text-secondary leading-relaxed text-center">
+            {data.abstract.first.text}
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }

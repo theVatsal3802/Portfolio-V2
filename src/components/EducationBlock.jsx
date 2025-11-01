@@ -6,17 +6,21 @@ export default function EducationBlock({ education }) {
   };
 
   return (
-    <div className="flex flex-col px-8 py-4 bg-white/20 rounded-md">
-      <div className="flex justify-between">
-        <h2 className="text-emerald-300 text-xl font-bold overflow-ellipsis w-[70%]">
+    <div className="flex flex-col p-6 md:p-8 bg-bg-secondary dark:bg-bg-secondary border border-border-primary dark:border-border-primary rounded-lg">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
+        <h2 className="text-accent text-lg md:text-xl lg:text-2xl font-bold">
           {education.college}
         </h2>
-        <p className="text-white text-xl overflow-ellipsis w-[30%] text-end">
+        <p className="text-text-secondary dark:text-text-secondary text-base md:text-lg font-medium">
           {education.score}
         </p>
       </div>
-      <p>{education.duration}</p>
-      <p className="font-bold text-emerald-400">{education.level}</p>
+      <p className="text-text-secondary dark:text-text-secondary text-sm md:text-base mb-2">
+        {education.duration}
+      </p>
+      <p className="text-text-primary dark:text-text-primary font-semibold text-base md:text-lg">
+        {education.level}
+      </p>
     </div>
   );
 }

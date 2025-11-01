@@ -1,79 +1,144 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "../components/ThemeToggle";
 import { data } from "../data";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const location = useLocation();
 
   function toggleNav() {
     setNav(!nav);
   }
 
-  function closeNav(index) {
-    handleClick(index);
+  function closeNav() {
     setNav(false);
   }
 
-  function handleClick(index) {
-    setSelectedIndex(index);
-  }
+  const getRoutePath = (title) => {
+    const routeMap = {
+      Home: "/",
+      About: "/about",
+      Education: "/education",
+      Experience: "/experience",
+      Projects: "/projects",
+      Skills: "/skills",
+      Achievements: "/achievements",
+      Contact: "/contact",
+    };
+    return routeMap[title] || "#";
+  };
+
+  const isActive = (link) => {
+    if (link.isRedirectLink) return false;
+    const routePath = getRoutePath(link.title);
+    return location.pathname === routePath;
+  };
 
   return (
-    <div className="z-50 fixed flex justify-center w-full font-bold">
-      <div className="border border-white/20 mt-8 backdrop-blur-3xl rounded-3xl hidden md:flex items-center justify-center p-2 max-w-full mx-auto">
-        <ul className="flex flex-row py-2 px-4 space-x-8">
-          {data.navLinks.map((link, index) => (
-            <li
-              key={index}
-              className={`${link.isRedirectLink ? "flex-row" : ""}`}
+    <div className="z-50 fixed flex justify-center w-full font-medium bg-bg-primary dark:bg-bg-primary border-b border-border-primary dark:border-border-primary">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between py-4">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center justify-between w-full">
+            <ul className="flex flex-row space-x-6 lg:space-x-8">
+              {data.navLinks.map((link, index) => {
+                if (link.isRedirectLink) {
+                  return (
+                    <li key={index}>
+                      <a
+                        href={link.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm lg:text-base transition-colors duration-200 text-accent hover:text-blue-600 dark:hover:text-blue-400"
+                      >
+                        {link.title}
+                      </a>
+                    </li>
+                  );
+                }
+                const routePath = getRoutePath(link.title);
+                return (
+                  <li key={index}>
+                    <Link
+                      to={routePath}
+                      className={`text-sm lg:text-base transition-colors duration-200 ${
+                        isActive(link)
+                          ? "text-accent font-semibold"
+                          : "text-text-primary dark:text-text-primary hover:text-text-secondary dark:hover:text-text-secondary"
+                      }`}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <ThemeToggle />
+          </nav>
+
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={toggleNav}
+              className="p-2 rounded-lg transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-800 border border-border-primary dark:border-border-primary"
+              aria-label="Toggle menu"
             >
-              <a
-                href={link.path}
-                target={link.isRedirectLink ? "_blank" : null}
-                className={`transform hover:skew-x-12 transition-all duration-300 ease-in-out ${
-                  link.isRedirectLink
-                    ? "text-emerald-300 hover:text-emerald-600"
-                    : "text-white hover:text-white/50"
-                }`}
-                onClick={() => handleClick(index)}
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+              {nav ? (
+                <AiOutlineClose className="w-6 h-6 text-text-primary dark:text-text-primary" />
+              ) : (
+                <AiOutlineMenu className="w-6 h-6 text-text-primary dark:text-text-primary" />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
 
+      {/* Mobile Menu */}
       <div
-        onClick={toggleNav}
-        className="md:hidden absolute top-5 right-14 border rounded z-50 text-white/70 border-white/70 p-2"
-      >
-        {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
-      </div>
-
-      <div
-        className={`fixed left-0 top-0 w-full h-full bg-black/90 transform transition-transform duration-300 ${
+        className={`fixed left-0 top-0 w-full h-full bg-bg-primary dark:bg-bg-primary transform transition-transform duration-300 z-40 ${
           nav ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="flex flex-col items-center justify-center space-y-8 h-full">
-          {data.navLinks.map((link, index) => (
-            <li key={index}>
-              <a
-                href={link.path}
-                className={`text-3xl ${
-                  link.isRedirectLink
-                    ? "text-emerald-300 hover:text-emerald-600"
-                    : "hover:text-white/50"
-                }`}
-                onClick={() => closeNav(index)}
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col items-center justify-center h-full px-4">
+          <ul className="flex flex-col items-center space-y-6">
+            {data.navLinks.map((link, index) => {
+              if (link.isRedirectLink) {
+                return (
+                  <li key={index}>
+                    <a
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl lg:text-2xl transition-colors duration-200 text-accent hover:text-blue-600 dark:hover:text-blue-400"
+                      onClick={closeNav}
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                );
+              }
+              const routePath = getRoutePath(link.title);
+              return (
+                <li key={index}>
+                  <Link
+                    to={routePath}
+                    className={`text-xl lg:text-2xl transition-colors duration-200 ${
+                      isActive(link)
+                        ? "text-accent font-semibold"
+                        : "text-text-primary dark:text-text-primary hover:text-text-secondary dark:hover:text-text-secondary"
+                    }`}
+                    onClick={closeNav}
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );
