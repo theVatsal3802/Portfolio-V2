@@ -32,7 +32,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`mailto:${data.email}`}
-                  className="text-base md:text-lg font-medium text-text-secondary dark:text-text-secondary hover:text-accent transition-colors duration-200"
+                  className="text-base md:text-lg font-medium text-text-secondary dark:text-text-secondary transition-colors duration-200 hover:text-text-primary dark:hover:text-text-primary"
                 >
                   {data.email}
                 </a>
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`tel:${data.countryCode}${data.mobile}`}
-                  className="text-base md:text-lg font-medium text-text-secondary dark:text-text-secondary hover:text-accent transition-colors duration-200"
+                  className="text-base md:text-lg font-medium text-text-secondary dark:text-text-secondary transition-colors duration-200 hover:text-text-primary dark:hover:text-text-primary"
                 >
                   {data.countryCode} {data.mobile}
                 </a>

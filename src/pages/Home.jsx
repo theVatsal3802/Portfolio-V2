@@ -15,7 +15,7 @@ const BentoCell = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className={`bg-bg-secondary dark:bg-bg-secondary border border-border-primary dark:border-border-primary rounded-lg p-6 md:p-8 hover:border-accent transition-all duration-300 hover:shadow-lg h-full ${className}`}
+      className={`bg-bg-secondary dark:bg-bg-secondary border border-border-primary dark:border-border-primary rounded-lg p-6 md:p-8 hover:border-accent transition-all duration-300 hover:shadow-lg hover:brightness-95 dark:hover:brightness-125 h-full ${className}`}
     >
       {children}
     </motion.div>
