@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
 import { data } from "../data";
@@ -51,9 +52,12 @@ export default function Navbar() {
                         href={link.path}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm lg:text-base transition-colors duration-200 text-accent hover:text-blue-600 dark:hover:text-blue-400"
+                        className="text-sm lg:text-base transition-colors duration-200 text-accent hover:text-blue-600 dark:hover:text-blue-400 flex flex-row items-center justify-center"
                       >
                         {link.title}
+                        <span className="ml-2">
+                          <HiOutlineExternalLink size={18} />
+                        </span>
                       </a>
                     </li>
                   );
