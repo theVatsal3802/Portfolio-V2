@@ -7,9 +7,15 @@ export default function AchievementBlock({ achievement }) {
   };
 
   return (
-    <div className="flex flex-col md:w-[70%] px-8 py-4 my-4 bg-white/10 rounded-md items-start justify-evenly">
-      <img className="w-[64px]" src={data.achievementImg} alt="Trophy Image" />
-      <p className="text-white text-xl">{achievement.title}</p>
+    <div className="flex flex-row items-start gap-4 p-6 md:p-8 bg-bg-secondary dark:bg-bg-secondary border border-border-primary dark:border-border-primary rounded-lg">
+      <img
+        className="w-12 h-12 md:w-16 md:h-16 flex-shrink-0"
+        src={data.achievementImg}
+        alt="Trophy"
+      />
+      <p className="text-base md:text-lg lg:text-xl text-text-secondary dark:text-text-secondary leading-relaxed pt-1">
+        {achievement.title}
+      </p>
     </div>
   );
 }

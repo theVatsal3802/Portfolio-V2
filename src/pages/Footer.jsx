@@ -5,26 +5,29 @@ import { data } from "../data";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="py-8 z-10">
-      <div className="mx-auto px-4 max-w-[1200px]">
-        <div className="flex items-center md:justify-between flex-col md:flex-row justify-center text-center">
+    <footer
+      id="contact"
+      className="py-12 md:py-16 lg:py-24 border-t border-border-primary dark:border-border-primary"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8 md:gap-12 mb-12">
           <div className="flex flex-col">
-            <h2 className="text-4xl block font-bold mb-10 md:text-7xl text-white/50">
-              <span className="text-emerald-400">Get in </span>touch
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-text-primary dark:text-text-primary">
+              <span className="text-accent">Get in </span>touch
             </h2>
             <a
               href={`mailto:${data.email}`}
-              className="md:text-3xl text-xl font-semibold text-white decoration-gray-400 decoration-2 hover:decoration-gray-200 transition duration-300"
+              className="text-base md:text-lg lg:text-xl font-medium text-text-secondary dark:text-text-secondary hover:text-accent transition-colors duration-200 mb-4"
             >
               {data.email}
             </a>
-          </div>
-          <div className="text-white/50 mt-12">
-            <div className="mb-8">
-              <p className="text-lg mb-1">{data.phone}</p>
+            <div className="mt-4">
+              <p className="text-sm md:text-base text-text-secondary dark:text-text-secondary mb-2">
+                {data.phone}
+              </p>
               <a
                 href={`tel:${data.countryCode}${data.mobile}`}
-                className="text-2xl font-semibold text-gray-400 decoration-2 hover:text-gray-50 transition-colors duration-300"
+                className="text-base md:text-lg font-medium text-text-secondary dark:text-text-secondary hover:text-accent transition-colors duration-200"
               >
                 {data.countryCode} {data.mobile}
               </a>
@@ -32,59 +35,65 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="relative mt-12 container flex justify-center items-center gap-10 sm:justify-between max-sm:flex-col">
-          <p className="text-gray-200 caption text-n-4 lg:block">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 border-t border-border-primary dark:border-border-primary">
+          <p className="text-sm md:text-base text-text-secondary dark:text-text-secondary">
             © {data.year} | {data.name}
           </p>
-          <ul className="flex gap-5 flex-wrap">
-            <li key={1}>
+          <ul className="flex gap-4 flex-wrap justify-center">
+            <li>
               <a
                 href={data.contact.linkedin.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label={data.contact.linkedin.name}
-                className="text-gray-200 flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80"
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-border-primary dark:border-border-primary hover:border-accent hover:bg-bg-secondary dark:hover:bg-bg-secondary transition-colors duration-200"
               >
-                <FaLinkedin size={30} />
+                <FaLinkedin
+                  size={20}
+                  className="text-text-secondary dark:text-text-secondary hover:text-accent"
+                />
               </a>
             </li>
-            <li key={2}>
+            <li>
               <a
                 href={data.contact.github.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label={data.contact.github.name}
-                className="text-gray-200 flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80"
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-border-primary dark:border-border-primary hover:border-accent hover:bg-bg-secondary dark:hover:bg-bg-secondary transition-colors duration-200"
               >
-                <AiFillGithub size={30} />
+                <AiFillGithub
+                  size={20}
+                  className="text-text-secondary dark:text-text-secondary hover:text-accent"
+                />
               </a>
             </li>
-            <li key={3}>
+            <li>
               <a
                 href={data.contact.twitter.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label={data.contact.twitter.name}
-                className="text-gray-200 flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80"
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-border-primary dark:border-border-primary hover:border-accent hover:bg-bg-secondary dark:hover:bg-bg-secondary transition-colors duration-200"
               >
-                <AiOutlineTwitter size={30} />
+                <AiOutlineTwitter
+                  size={20}
+                  className="text-text-secondary dark:text-text-secondary hover:text-accent"
+                />
               </a>
             </li>
-            {/* <li key={4}>
-              <a
-                href={data.contact.instagram.link}
-                target="_blank"
-                aria-label={data.contact.instagram.name}
-                className="text-gray-200 flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80"
-              >
-                <AiFillInstagram size={30} />
-              </a>
-            </li> */}
-            <li key={5}>
+            <li>
               <a
                 href={data.contact.medium.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label={data.contact.medium.name}
-                className="text-gray-200 flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80"
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-border-primary dark:border-border-primary hover:border-accent hover:bg-bg-secondary dark:hover:bg-bg-secondary transition-colors duration-200"
               >
-                <FaMedium size={30} />
+                <FaMedium
+                  size={20}
+                  className="text-text-secondary dark:text-text-secondary hover:text-accent"
+                />
               </a>
             </li>
           </ul>
