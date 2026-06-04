@@ -90,9 +90,9 @@ export const data = {
     education: [
         {
             college: "IIT Kharagpur",
-            score: "CGPA: 8.43 / 10",
+            score: "CGPA: 8.98 / 10",
             level: "M.Tech in CSE",
-            duration: "Jul 2024 - Jun 2026",
+            duration: "Jul 2024 - May 2026",
         },
         {
             college: "IIIT Kota",
