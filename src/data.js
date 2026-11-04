@@ -122,13 +122,24 @@ export const data = {
 
     experience: [
         {
+            name: "Qualcomm",
+            position: "Software Engineer",
+            duration: "Jun 2026 - Present",
+            type: "Fulltime",
+            desc: [
+                "Reduced GitHub Actions CI execution time for quantization and compilation of 44 GenAI models from 6 hours to under 1 hour(83 % + reduction) through job parallelization.",
+                "Orchestrated job dependencies using needs and inter-job outputs, ensuring prerequisite resources were available and preventing race conditions during parallel execution using proper locks.",
+                "Built an internal visualization tool using AI-assisted development, integrating Flutter and PostgreSQL to surface engineering metrics, logs, and performance data."
+            ],
+        },
+        {
             name: "Texas Instruments",
             position: "SDE Intern",
             duration: "May 2025 - Jul 2025",
             type: "Internship",
             desc: [
-                " Developed a visualization software using Flutter & Dart to visualize the logs in an efficient manner which reduced the debugging time by 50 %.",
-                " Integrated custom solution into existing C code to dump the processor logs into JSON format, without affecting existing functionality to felicitate seamless integration into the visualization tool.",
+                "Developed a visualization software using Flutter & Dart to visualize the logs in an efficient manner which reduced the debugging time by 50 %.",
+                "Integrated custom solution into existing C code to dump the processor logs into JSON format, without affecting existing functionality to felicitate seamless integration into the visualization tool.",
             ],
             certificate: "https://drive.google.com/file/d/1CqK9NWlb-jrABmhlagls8vrapwBl4-_O/view?usp=sharing",
         },
